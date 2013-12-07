@@ -38,24 +38,17 @@ var blinker = module.exports = new (function() {
     }
 
     this.demo = function() {
-        this
-          .color(255, 0, 0, 1000)
-          .color(0, 255, 0, 1000)
-          .color(0, 0, 255, 1000)
-          .color(255, 20, 0, 1000)
-          .color(203, 0, 245, 1000)
-          .color(255, 215, 0, 1000)
-          .color(3, 35, 60, 1000)
-          .color(0, 255, 0, 1000)
-          .color(0, 0, 255, 1000)
-          .color(255, 0, 0, 200)
-          .color(0, 0, 255, 200)
-          .color(255, 0, 0, 200)
-          .color(0, 0, 255, 200)
-          .color(255, 0, 0, 200)
-          .color(0, 0, 255, 200)
-          .color(255, 255, 255, 1000)
-          .off();
+        var time = 20;
+        for (i = 0; i < 255; i++) {
+            blinker.color(0, i, 255 - i, time)
+        }
+        for (i = 0; i < 255; i++) {
+            blinker.color(i, 255 - i, 0, time)
+        }
+        for (i = 0; i < 255; i++) {
+            blinker.color(255 - i, 0, i, time)
+        }
+        blinker.off();
         return this;
     }
 
